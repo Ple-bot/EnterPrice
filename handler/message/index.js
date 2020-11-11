@@ -60,8 +60,8 @@ module.exports = msgHandler = async (client, message) => {
                 .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Para Ver Los Comandos De Administradores: *#menuadmin*') : null)
             break
         case 'menuadmin':
-            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
-            if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
+            if (!isGroupMsg) return client.reply(from, 'Lo sentimos, este comando solo se puede usar dentro del grupo! [Solamente En El Grupo]', id)
+            if (!isGroupAdmins) return client.reply(from, 'Este Comando solo lo pueden usar los administradores del grupo! [Solamente Administradores]', id)
             await client.sendText(from, menuId.textAdmin())
             break
         case 'donate':
@@ -87,9 +87,9 @@ module.exports = msgHandler = async (client, message) => {
                 */
                 client.reply(from, 'ehhh, what\'s that???', id)
             } else if (args.length === 1) {
-                if (!is.Url(url)) { await client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id) }
+                if (!is.Url(url)) { await client.reply(from, 'Lo sentimos, el enlace que envió no es válido. [Invalid Link]', id) }
                 client.sendStickerfromUrl(from, url).then((r) => (!r && r !== undefined)
-                    ? client.sendText(from, 'Maaf, link yang kamu kirim tidak memuat gambar. [No Image]')
+                    ? client.sendText(from, 'Lo sentimos, el enlace que envió no contiene una imagen. [No Hay Imagen]')
                     : client.reply(from, 'Sticker Creado Puto ATT : ☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ')).then(() => console.log(`Sticker Processed for ${processTime(t, moment())} Second`))
             } else {
                 await client.reply(from, 'Tidak ada gambar! Untuk membuka daftar perintah kirim #menu [Wrong Format]', id)
@@ -100,7 +100,7 @@ module.exports = msgHandler = async (client, message) => {
         case 'stickergif':
         case 'gifstiker':
         case 'gifsticker': {
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             if (is.Giphy(url)) {
                 const getGiphyCode = url.match(new RegExp(/(\/|\-)(?:.(?!(\/|\-)))+$/, 'gi'))
                 if (!getGiphyCode) { return client.reply(from, 'Gagal mengambil kode giphy', id) }
@@ -119,14 +119,14 @@ module.exports = msgHandler = async (client, message) => {
                     console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
                 }).catch((err) => console.log(err))
             } else {
-                await client.reply(from, 'maaf, untuk saat ini sticker gif hanya bisa menggunakan link dari giphy.  [Giphy Only]', id)
+                await client.reply(from, 'Lo siento, por ahora los stickers con movimiento solo pueden usar el enlace de la pagina GIPHY.  [GIPHY Solamente]', id)
             }
             break
         }
         // Video Downloader
         case 'tiktok':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (!is.Url(url) && !url.includes('tiktok.com')) return client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id)
+            if (args.length !== 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
+            if (!is.Url(url) && !url.includes('tiktok.com')) return client.reply(from, 'Lo sentimos, el enlace que envió no es válido. [Enlace Invalido]', id)
             await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.tiktok(url).then(async (videoMeta) => {
                 const filename = videoMeta.authorMeta.name + '.mp4'
