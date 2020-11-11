@@ -87,12 +87,12 @@ module.exports = msgHandler = async (client, message) => {
                 */
                 client.reply(from, 'ehhh, what\'s that???', id)
             } else if (args.length === 1) {
-                if (!is.Url(url)) { await client.reply(from, 'Lo sentimos, el enlace que envió no es válido. [Invalid Link]', id) }
+                if (!is.Url(url)) { await client.reply(from, 'Lo sentimos, el enlace que envió no es válido. [Enlace Invalido]', id) }
                 client.sendStickerfromUrl(from, url).then((r) => (!r && r !== undefined)
                     ? client.sendText(from, 'Lo sentimos, el enlace que envió no contiene una imagen. [No Hay Imagen]')
                     : client.reply(from, 'Sticker Creado Puto ATT : ☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ')).then(() => console.log(`Sticker Processed for ${processTime(t, moment())} Second`))
             } else {
-                await client.reply(from, 'Tidak ada gambar! Untuk membuka daftar perintah kirim #menu [Wrong Format]', id)
+                await client.reply(from, '¡Sin imagen! Para abrir la lista de comandos enviar. #menu [Formato erróneo]', id)
             }
             break
         }
@@ -112,7 +112,7 @@ module.exports = msgHandler = async (client, message) => {
                 }).catch((err) => console.log(err))
             } else if (is.MediaGiphy(url)) {
                 const gifUrl = url.match(new RegExp(/(giphy|source).(gif|mp4)/, 'gi'))
-                if (!gifUrl) { return client.reply(from, 'Gagal mengambil kode giphy', id) }
+                if (!gifUrl) { return client.reply(from, 'No se pudo recuperar el código giphy', id) }
                 const smallGifUrl = url.replace(gifUrl[0], 'giphy-downsized.gif')
                 client.sendGiphyAsSticker(from, smallGifUrl).then(() => {
                     client.reply(from, 'Sticker Creado Ahora Llegale Puto ATT: ☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ.')
@@ -138,8 +138,8 @@ module.exports = msgHandler = async (client, message) => {
             break
         case 'ig':
         case 'instagram':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (!is.Url(url) && !url.includes('instagram.com')) return client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id)
+            if (args.length !== 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
+            if (!is.Url(url) && !url.includes('instagram.com')) return client.reply(from, 'Lo sentimos, el enlace que envió no es válido. [Enlace Invalido]', id)
             await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.insta(url).then(async (data) => {
                 if (data.type == 'GraphSidecar') {
@@ -165,14 +165,14 @@ module.exports = msgHandler = async (client, message) => {
             })
                 .catch((err) => {
                     console.log(err)
-                    if (err === 'Not a video') { return client.reply(from, 'Error, tidak ada video di link yang kamu kirim. [Invalid Link]', id) }
+                    if (err === 'Not a video') { return client.reply(from, 'Error, no hay video en el enlace que enviaste. [Enlace Invalido]', id) }
                     client.reply(from, 'Error, user private atau link salah [Private or Invalid Link]', id)
                 })
             break
         case 'twt':
         case 'twitter':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (!is.Url(url) & !url.includes('twitter.com') || url.includes('t.co')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
+            if (args.length !== 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato errónro]', id)
+            if (!is.Url(url) & !url.includes('twitter.com') || url.includes('t.co')) return client.reply(from, 'Lo sentimos, la URL que envió no es válida. [Enlace Invalido]', id)
             await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
             downloader.tweet(url).then(async (data) => {
                 if (data.type === 'video') {
@@ -190,13 +190,13 @@ module.exports = msgHandler = async (client, message) => {
                     }
                 }
             })
-                .catch(() => client.sendText(from, 'Maaf, link tidak valid atau tidak ada media di link yang kamu kirim. [Invalid Link]'))
+                .catch(() => client.sendText(from, 'Lo sentimos, el enlace no es válido o no hay medios en el enlace que envió. [Enlace Invalido]'))
             break
         case 'fb':
         case 'facebook':
-            if (args.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (!is.Url(url) && !url.includes('facebook.com')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
-            await client.reply(from, '_Scraping Metadata..._ \n\nTerimakasih telah menggunakan bot ini, kamu dapat membantu pengembangan bot ini dengan menyawer melalui https://saweria.co/donate/yogasakti atau mentrakteer melalui https://trakteer.id/red-emperor \nTerimakasih.', id)
+            if (args.length !== 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
+            if (!is.Url(url) && !url.includes('facebook.com')) return client.reply(from, 'Lo sentimos, la URL que envió no es válida.. [Enlace Invalido]', id)
+            await client.reply(from, '_PleMountain..._ \n\nGracias por usar este bot, puedes ayudar al desarrollo de este bot preguntando a través de https://www.facebook.com/PleMountain/ o buscarme por twitter https://twitter.com/PleMountain \nGracias.', id)
             downloader.facebook(url).then(async (videoMeta) => {
                 const title = videoMeta.response.title
                 const thumbnail = videoMeta.response.thumbnail
@@ -214,7 +214,7 @@ module.exports = msgHandler = async (client, message) => {
                     .then((serialized) => console.log(`Sukses Mengirim File dengan id: ${serialized} diproses selama ${processTime(t, moment())}`))
                     .catch((err) => console.error(err))
             })
-                .catch((err) => client.reply(from, `Error, url tidak valid atau tidak memuat video. [Invalid Link or No Video] \n\n${err}`, id))
+                .catch((err) => client.reply(from, `Error, la URL no es válida o el video no se carga. [Enlace no válido o sin vídeo] \n\n${err}`, id))
             break
         // Other Command
         case 'meme':
@@ -229,81 +229,81 @@ module.exports = msgHandler = async (client, message) => {
                     .then((serialized) => console.log(`Sukses Mengirim File dengan id: ${serialized} diproses selama ${processTime(t, moment())}`))
                     .catch((err) => console.error(err))
             } else {
-                await client.reply(from, 'Tidak ada gambar! Untuk membuka cara penggnaan kirim #menu [Wrong Format]', id)
+                await client.reply(from, '¡Sin imagen! Para abrir cómo usar enviar #menú [Formato erróneo]', id)
             }
             break
         case 'resi':
-            if (args.length !== 2) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length !== 2) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             const kurirs = ['jne', 'pos', 'tiki', 'wahana', 'jnt', 'rpx', 'sap', 'sicepat', 'pcp', 'jet', 'dse', 'first', 'ninja', 'lion', 'idl', 'rex']
-            if (!kurirs.includes(args[0])) return client.sendText(from, `Maaf, jenis ekspedisi pengiriman tidak didukung layanan ini hanya mendukung ekspedisi pengiriman ${kurirs.join(', ')} Tolong periksa kembali.`)
+            if (!kurirs.includes(args[0])) return client.sendText(from, `Lo sentimos, el tipo de expedición de envío no es compatible. Este servicio solo admite expedición de envíoLo sentimos, el tipo de expedición de envío no es compatible. Este servicio solo admite expedición de envío ${kurirs.join(', ')} Por favor revise de nuevo.`)
             console.log('Memeriksa No Resi', args[1], 'dengan ekspedisi', args[0])
             cekResi(args[0], args[1]).then((result) => client.sendText(from, result))
             break
         case 'translate':
-            if (args.length != 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (!quotedMsg) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (args.length != 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
+            if (!quotedMsg) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             const quoteText = quotedMsg.type == 'chat' ? quotedMsg.body : quotedMsg.type == 'image' ? quotedMsg.caption : ''
             translate(quoteText, args[0])
                 .then((result) => client.sendText(from, result))
-                .catch(() => client.sendText(from, '[Error] Kode bahasa salah atau server bermasalah.'))
+                .catch(() => client.sendText(from, '[Error] Código de idioma incorrecto o problema con el servidor.'))
             break
         case 'ceklok':
         case 'ceklokasi':
-            if (!quotedMsg || quotedMsg.type !== 'location') return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (!quotedMsg || quotedMsg.type !== 'location') return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             console.log(`Request Status Zona Penyebaran Covid-19 (${quotedMsg.lat}, ${quotedMsg.lng}).`)
             const zoneStatus = await getLocationData(quotedMsg.lat, quotedMsg.lng)
-            if (zoneStatus.kode !== 200) client.sendText(from, 'Maaf, Terjadi error ketika memeriksa lokasi yang anda kirim.')
+            if (zoneStatus.kode !== 200) client.sendText(from, 'Lo sentimos, hubo un error al verificar la ubicación que envió.')
             let data = ''
             for (let i = 0; i < zoneStatus.data.length; i++) {
                 const { zone, region } = zoneStatus.data[i]
                 const _zone = zone == 'green' ? 'Hijau* (Aman) \n' : zone == 'yellow' ? 'Kuning* (Waspada) \n' : 'Merah* (Bahaya) \n'
                 data += `${i + 1}. Kel. *${region}* Berstatus *Zona ${_zone}`
             }
-            const text = `*CEK LOKASI PENYEBARAN COVID-19*\nHasil pemeriksaan dari lokasi yang anda kirim adalah *${zoneStatus.status}* ${zoneStatus.optional}\n\nInformasi lokasi terdampak disekitar anda:\n${data}`
+            const text = `*COMPRUEBE LA UBICACIÓN DE LA DISTRIBUCIÓN COVID-19*\nLos resultados de la inspección de la ubicación que envió son *${zoneStatus.status}* ${zoneStatus.optional}\n\nInformación de ubicación afectada cerca de usted:\n${data}`
             client.sendText(from, text)
             break
         // Group Commands (group admin only)
         case 'kick':
-            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
-            if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
-            if (!isBotGroupAdmins) return client.reply(from, 'Gagal, silahkan tambahkan bot sebagai admin grup! [Bot Not Admin]', id)
-            if (mentionedJidList.length === 0) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (!isGroupMsg) return client.reply(from, 'Lo sentimos, ¡este comando solo se puede usar dentro de grupos! [Solamente en el grupo]', id)
+            if (!isGroupAdmins) return client.reply(from, 'Falló, este comando solo puede ser utilizado por los administradores del grupo. [Comando De Administradores.]', id)
+            if (!isBotGroupAdmins) return client.reply(from, 'Falló, agregue el bot como administrador del grupo. [El Bot No Es Administrador.]', id)
+            if (mentionedJidList.length === 0) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
+            if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             await client.sendTextWithMentions(from, `Request diterima, mengeluarkan:\n${mentionedJidList.map(x => `@${x.replace('@c.us', '')}`).join('\n')}`)
             for (let i = 0; i < mentionedJidList.length; i++) {
-                if (groupAdmins.includes(mentionedJidList[i])) return await client.sendText(from, 'Gagal, kamu tidak bisa mengeluarkan admin grup.')
+                if (groupAdmins.includes(mentionedJidList[i])) return await client.sendText(from, 'Error, no puede eliminar el administrador del grupo.')
                 await client.removeParticipant(groupId, mentionedJidList[i])
             }
             break
         case 'promote':
-            if (!isGroupMsg) return await client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
-            if (!isGroupAdmins) return await client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
-            if (!isBotGroupAdmins) return await client.reply(from, 'Gagal, silahkan tambahkan bot sebagai admin grup! [Bot not Admin]', id)
-            if (mentionedJidList.length != 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format, Only 1 user]', id)
-            if (groupAdmins.includes(mentionedJidList[0])) return await client.reply(from, 'Maaf, user tersebut sudah menjadi admin. [Bot is Admin]', id)
-            if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (!isGroupMsg) return await client.reply(from, 'Lo sentimos, este comando solo se puede usar dentro del grupo! [Solamente En El Gurpo]', id)
+            if (!isGroupAdmins) return await client.reply(from, 'Falló, este comando solo puede ser utilizado por los administradores del grupo. [Comando De Administrador]', id)
+            if (!isBotGroupAdmins) return await client.reply(from, 'Falló, agregue el bot como administrador del grupo. [El Bot No Es Administrador.]', id)
+            if (mentionedJidList.length != 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato incorrecto, solo 1 usuario]', id)
+            if (groupAdmins.includes(mentionedJidList[0])) return await client.reply(from, 'Lo siento, ese usuario ya es administrador. [El Bot Es dministrador]', id)
+            if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             await client.promoteParticipant(groupId, mentionedJidList[0])
             await client.sendTextWithMentions(from, `Request diterima, menambahkan @${mentionedJidList[0].replace('@c.us', '')} sebagai admin.`)
             break
         case 'demote':
-            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
-            if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
-            if (!isBotGroupAdmins) return client.reply(from, 'Gagal, silahkan tambahkan bot sebagai admin grup! [Bot not Admin]', id)
-            if (mentionedJidList.length !== 1) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format, Only 1 user]', id)
-            if (!groupAdmins.includes(mentionedJidList[0])) return await client.reply(from, 'Maaf, user tersebut tidak menjadi admin. [user not Admin]', id)
-            if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (!isGroupMsg) return client.reply(from, 'Lo sentimos, ¡este comando solo se puede usar dentro de grupos! [Solamente en el grupo]', id)
+            if (!isGroupAdmins) return client.reply(from, 'Falló, este comando solo puede ser utilizado por los administradores del grupo. [Comando De Administradores.]', id)
+            if (!isBotGroupAdmins) return client.reply(from, 'Falló, agregue el bot como administrador del grupo. [El Bot No Es Administrador.]', id)
+            if (mentionedJidList.length !== 1) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato incorrecto, solo 1 usuario]', id)
+            if (!groupAdmins.includes(mentionedJidList[0])) return await client.reply(from, 'Lo sentimos, el usuario no es un administrador. [El usuario no es administrador]', id)
+            if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             await client.demoteParticipant(groupId, mentionedJidList[0])
             await client.sendTextWithMentions(from, `Request diterima, menghapus jabatan @${mentionedJidList[0].replace('@c.us', '')}.`)
             break
         case 'bye':
-            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
-            if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
+            if (!isGroupMsg) return client.reply(from, 'Lo sentimos, este comando solo se puede usar dentro del grupo! [Solamente En El Gurpo]', id)
+            if (!isGroupAdmins) return client.reply(from, 'Falló, este comando solo puede ser utilizado por los administradores del grupo! [Comando De Administrador]', id)
             client.sendText(from, 'Good bye... ( ⇀‸↼‶ )').then(() => client.leaveGroup(groupId))
             break
         case 'del':
-            if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
-            if (!quotedMsg) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
-            if (!quotedMsgObj.fromMe) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
+            if (!isGroupAdmins) return client.reply(from, 'Falló, este comando solo puede ser utilizado por los administradores del grupo. [Comando De Administrador]', id)
+            if (!quotedMsg) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
+            if (!quotedMsgObj.fromMe) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             client.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, false)
             break
         case 'tagall':
