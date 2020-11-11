@@ -90,7 +90,7 @@ module.exports = msgHandler = async (client, message) => {
                 if (!is.Url(url)) { await client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id) }
                 client.sendStickerfromUrl(from, url).then((r) => (!r && r !== undefined)
                     ? client.sendText(from, 'Maaf, link yang kamu kirim tidak memuat gambar. [No Image]')
-                    : client.reply(from, 'Here\'s your sticker')).then(() => console.log(`Sticker Processed for ${processTime(t, moment())} Second`))
+                    : client.reply(from, 'Sticker Creado Puto ATT : ☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ')).then(() => console.log(`Sticker Processed for ${processTime(t, moment())} Second`))
             } else {
                 await client.reply(from, 'Tidak ada gambar! Untuk membuka daftar perintah kirim #menu [Wrong Format]', id)
             }
