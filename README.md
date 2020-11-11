@@ -20,10 +20,10 @@
 
 | Creador De Sticker |                Caracteristica           |
 | :-----------: | :--------------------------------: |
-|       ✅       | Send Photo with Caption          |
-|       ✅       | Reply A Photo                    |
-|       ✅       | Image Url                        |
-|       ✅       | Animated sticker using giphy url |
+|       ✅       | Enviar foto         |
+|       ✅       | Responder una foto                    |
+|       ✅       | Imagen Url                        |
+|       ✅       | Sticker animado con URL giphy |
 |       https://bit.ly/3hmgD4R       | Sticker sin fondo       |
 |       https://bit.ly/3hmgD4R       | Sticker meme      |
 
