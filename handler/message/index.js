@@ -57,7 +57,7 @@ module.exports = msgHandler = async (client, message) => {
         case 'menu':
         case 'help':
             await client.sendText(from, menuId.textMenu(pushname))
-                .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Menu Admin Grup: *#menuadmin*') : null)
+                .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Para Ver Los Comandos De Administradores: *#menuadmin*') : null)
             break
         case 'menuadmin':
             if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
@@ -77,7 +77,7 @@ module.exports = msgHandler = async (client, message) => {
                 const mediaData = await decryptMedia(encryptMedia, uaOverride)
                 const imageBase64 = `data:${_mimetype};base64,${mediaData.toString('base64')}`
                 client.sendImageAsSticker(from, imageBase64).then(() => {
-                    client.reply(from, 'Here\'s your sticker')
+                    client.reply(from, 'Sticker Creado Ahora Llegale Puto ATT: ☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ.')
                     console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
                 })
             } else if (args[0] === 'nobg') {
@@ -107,7 +107,7 @@ module.exports = msgHandler = async (client, message) => {
                 const giphyCode = getGiphyCode[0].replace(/[-\/]/gi, '')
                 const smallGifUrl = 'https://media.giphy.com/media/' + giphyCode + '/giphy-downsized.gif'
                 client.sendGiphyAsSticker(from, smallGifUrl).then(() => {
-                    client.reply(from, 'Here\'s your sticker')
+                    client.reply(from, 'Sticker Creado Ahora Llegale Puto ATT: ☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ.')
                     console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
                 }).catch((err) => console.log(err))
             } else if (is.MediaGiphy(url)) {
@@ -115,7 +115,7 @@ module.exports = msgHandler = async (client, message) => {
                 if (!gifUrl) { return client.reply(from, 'Gagal mengambil kode giphy', id) }
                 const smallGifUrl = url.replace(gifUrl[0], 'giphy-downsized.gif')
                 client.sendGiphyAsSticker(from, smallGifUrl).then(() => {
-                    client.reply(from, 'Here\'s your sticker')
+                    client.reply(from, 'Sticker Creado Ahora Llegale Puto ATT: ☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ.')
                     console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
                 }).catch((err) => console.log(err))
             } else {
