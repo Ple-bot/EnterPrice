@@ -13,10 +13,10 @@ Al usar este código fuente / bot, acepta los siguientes términos y condiciones
     • quema de bosques / defirestación
     • discurso de odio o discriminación por motivos de edad, sexo, identidad de género, raza, sexualidad, religión, nacionalidad.
 
-Source Code BOT: https://github.com/YogaSakti/imageToSticker
-NodeJS WhatsApp library: https://github.com/open-wa/wa-automate-nodejs
+Código fuente BOT: https://github.com/Ple-bot/EnterPrice
+NodeJS WhatsApp libreria: https://github.com/open-wa/wa-automate-nodejs
 
-Best regards, Yoga Sakti.`
+☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ.`
 }
 
 exports.textMenu = (pushname) => {
