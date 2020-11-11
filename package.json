@@ -28,7 +28,7 @@
     "require-from-web": "^1.2.0",
     "tiktok-scraper": "^1.4.0",
     "update-json-file": "^1.1.1",
-    "video-url-link": "git+https://github.com/Ple-bot/video-url-link.git"
+    "video-url-link": "git+https://github.com/YogaSakti/video-url-link.git"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
