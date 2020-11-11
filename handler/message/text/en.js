@@ -24,6 +24,8 @@ exports.textMenu = (pushname) => {
 Buenas, ${pushname || ''} Como estas?
 Soy Ple Y Este Es Mi BOT!!✨
 
+Creador Del Bot : wa.me/16677777779
+
 Creador de sticker:
 1. *#sticker*
 Para hacer un sticker
