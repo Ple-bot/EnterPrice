@@ -269,9 +269,9 @@ module.exports = msgHandler = async (client, message) => {
             if (!isBotGroupAdmins) return client.reply(from, 'Falló, agregue el bot como administrador del grupo. [El Bot No Es Administrador.]', id)
             if (mentionedJidList.length === 0) return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
-            await client.sendTextWithMentions(from, `Request diterima, mengeluarkan:\n${mentionedJidList.map(x => `@${x.replace('@c.us', '')}`).join('\n')}`)
+            await client.sendTextWithMentions(from, `Solicitud recibida, emitida:\n${mentionedJidList.map(x => `@${x.replace('@c.us', '')}`).join('\n')}`)
             for (let i = 0; i < mentionedJidList.length; i++) {
-                if (groupAdmins.includes(mentionedJidList[i])) return await client.sendText(from, 'Error, no puede eliminar el administrador del grupo.')
+                if (groupAdmins.includes(mentionedJidList[i])) return await client.sendText(from, 'Error, no puedes eliminar a el creador del grupo...')
                 await client.removeParticipant(groupId, mentionedJidList[i])
             }
             break
