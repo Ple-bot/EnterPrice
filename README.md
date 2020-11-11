@@ -1,95 +1,94 @@
 <div align="center">
  
-# Whatsapp Bot - sticker creator
+# Whatsapp Bot - Ple Mountain
 [![Codefactor](https://www.codefactor.io/repository/github/yogasakti/imagetosticker/badge)](https://www.codefactor.io/repository/github/yogasakti/imagetosticker)
 <details>
- <summary>🥟 Help me!</summary>
+ <summary>🥟 Ayudame!</summary>
 
- [Saweria](https://saweria.co/donate/yogasakti)
+ [Facebook](https://www.facebook.com/PleMountain/)
  
- [Trakteer](https://trakteer.id/red-emperor)
+ [Twitter](https://twitter.com/PleMountain)
  
- [Paypal.me](https://paypal.me/yshputra)
+ [WhatsApp](wa.me/16677777779)
  
 </details>
 </div>
 
 
 
-## Features
+## Caracteristicas
 
-| Sticker Creator |                Feature           |
+| Creador De Sticker |                Caracteristica           |
 | :-----------: | :--------------------------------: |
 |       ✅       | Send Photo with Caption          |
 |       ✅       | Reply A Photo                    |
 |       ✅       | Image Url                        |
 |       ✅       | Animated sticker using giphy url |
-|       https://bit.ly/3hmgD4R       | sticker with no background       |
-|       https://bit.ly/3hmgD4R       | sticker meme      |
+|       https://bit.ly/3hmgD4R       | Sticker sin fondo       |
+|       https://bit.ly/3hmgD4R       | Sticker meme      |
 
 
-| Downloader |                     Feature                |
+| Descarga |                     Caracteristica                |
 | :------------: | :---------------------------------------------: |
-|       ✅        |   Tiktok Downloader (No WM & WM)              |
-|       ✅        |   Twitter Video Downloader                    |
-|       ✅        |   Facebook Video Downloader (SD & HD)         |
-|       ✅      |   Instagram Video Downloader                  |
+|       ✅        |   Tiktok Gestor (No WM & WM)              |
+|       ✅        |   Twitter Video Gestor                    |
+|       ✅        |   Facebook Video Gestor (SD & HD)         |
+|       ✅      |   Instagram Video Gestor                  |
 
 
-| Other  |                     Feature                     |
+| Otro  |                     Caracteristica                     |
 | :------------: | :---------------------------------------------: |
-|       ✅        |   Create Custom meme (top text & bottom text)  |
-|       ✅        |   Translate text (quote only)                  |
-|       ✅        |   check data on the spread of Covid-19 in certain locations|
-|       ✅        |   Check Shipping info (indonesia only)         |
+|       ✅        |   Crear meme personalizado (texto superior y texto inferior)  |
+|       ✅        |   Traducir texto (solo citar)                 |
+|       ✅        |   verificar datos sobre la propagación de Covid-19 en ciertas ubicaciones|
 |      BETA        |   Anti Spam                                   |
 
 
-| Grup Only  |                     Feature                     |
+| Comandos De Administradores  |                     Caracteristica                     |
 | :------------: | :---------------------------------------------: |
-|       ✅        |   Promote User                  |
-|       ✅        |   Demote User                   |
-|       ✅        |   Kick User                     |
-|       ✅        |   Delete bot message            |
-|       https://bit.ly/3hmgD4R        |   Mention All User      |
+|       ✅        |   Promote Usuario                  |
+|       ✅        |   Demote Usuario                   |
+|       ✅        |   Kick Usuario                     |
+|       ✅        |   Eliminar mensajes del bot            |
+|       https://bit.ly/3hmgD4R        |   Mencionar todos los usuarios      |
 
-## To-Do
- - Add More Feature
- - More refactoring
+## Que hacer
+ - Agregar más función
+ - Más refactorización
  
 ---
 
-## Getting Started
+## Empezando
 
-This project require NodeJS v12.
+Este proyecto requiere NodeJS v12.
 
-### Install
-Clone this project
+### Instalación
+Clonar este proyecto
 
 ```bash
 > git clone https://github.com/YogaSakti/imageToSticker.git
 > cd imageToSticker
 ```
 
-Install the dependencies:
+Instale las dependencias:
 
 ```bash
 > npm install
 ```
 
-### Usage
-1. run the Whatsapp bot
+### Uso
+1. ejecutar el bot de Whatsapp
 
 ```bash
 > npm start
 ```
 
-after running it you need to scan the qr
+después de ejecutarlo, debe escanear el código qr
 
-## Troubleshooting
-Make sure all the necessary dependencies are installed: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+## Solución de problemas
+Asegúrese de que todas las dependencias necesarias estén instaladas: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 
-Fix Stuck on linux, install google chrome stable: 
+Arregle Stuck en linux, instale google chrome estable: 
 ```bash
 > wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 > sudo apt install ./google-chrome-stable_current_amd64.deb
