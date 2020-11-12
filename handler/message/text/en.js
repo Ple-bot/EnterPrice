@@ -16,7 +16,7 @@ Al usar este código fuente / bot, acepta los siguientes términos y condiciones
 Código fuente BOT: https://github.com/Ple-bot/EnterPrice
 NodeJS WhatsApp libreria: https://github.com/open-wa/wa-automate-nodejs
 
-☠⃟♛ꊛɴвυѕcα߶̫♛⃟☠⸋⸁ᶜ.`
+PleMountain`
 }
 
 exports.textMenu = (pushname) => {
