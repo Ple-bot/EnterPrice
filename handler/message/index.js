@@ -250,7 +250,7 @@ module.exports = msgHandler = async (client, message) => {
         case 'ceklok':
         case 'ceklokasi':
             if (!quotedMsg || quotedMsg.type !== 'location') return client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
-            console.log(`Request Status Zona Penyebaran Covid-19 (${quotedMsg.lat}, ${quotedMsg.lng}).`)
+            console.log(`Solicitud de estado de zona de propagación Covid-19 (${quotedMsg.lat}, ${quotedMsg.lng}).`)
             const zoneStatus = await getLocationData(quotedMsg.lat, quotedMsg.lng)
             if (zoneStatus.kode !== 200) client.sendText(from, 'Lo sentimos, hubo un error al verificar la ubicación que envió.')
             let data = ''
@@ -283,7 +283,7 @@ module.exports = msgHandler = async (client, message) => {
             if (groupAdmins.includes(mentionedJidList[0])) return await client.reply(from, 'Lo siento, ese usuario ya es administrador. [El Bot Es dministrador]', id)
             if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             await client.promoteParticipant(groupId, mentionedJidList[0])
-            await client.sendTextWithMentions(from, `Request diterima, menambahkan @${mentionedJidList[0].replace('@c.us', '')} sebagai admin.`)
+            await client.sendTextWithMentions(from, `Solicitud aceptada, agregada @${mentionedJidList[0].replace('@c.us', '')} sebagai admin.`)
             break
         case 'demote':
             if (!isGroupMsg) return client.reply(from, 'Lo sentimos, ¡este comando solo se puede usar dentro de grupos! [Solamente en el grupo]', id)
@@ -293,7 +293,7 @@ module.exports = msgHandler = async (client, message) => {
             if (!groupAdmins.includes(mentionedJidList[0])) return await client.reply(from, 'Lo sentimos, el usuario no es un administrador. [El usuario no es administrador]', id)
             if (mentionedJidList[0] === botNumber) return await client.reply(from, 'Lo sentimos, el formato del mensaje es incorrecto, consulte el menú. [Formato erróneo]', id)
             await client.demoteParticipant(groupId, mentionedJidList[0])
-            await client.sendTextWithMentions(from, `Request diterima, menghapus jabatan @${mentionedJidList[0].replace('@c.us', '')}.`)
+            await client.sendTextWithMentions(from, `Solicitud aceptada, eliminar posición @${mentionedJidList[0].replace('@c.us', '')}.`)
             break
         case 'bye':
             if (!isGroupMsg) return client.reply(from, 'Lo sentimos, este comando solo se puede usar dentro del grupo! [Solamente En El Gurpo]', id)
