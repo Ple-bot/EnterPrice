@@ -21,10 +21,12 @@ PleMountain`
 
 exports.textMenu = (pushname) => {
     return `
-Buenas, ${pushname || ''} Como estas?
-Soy Ple Y Este Es Mi BOT!!✨
+HEY!, ${pushname || ''} Como estas?
+Soy Ple Y Este Es Mi BOT!!🦍❄
 
-Creador Del Bot : wa.me/16677777779
+*Creador Del Bot : wa.me/16677777779 🦍*
+*Facebook : https://www.facebook.com/PleMountain/ 🦍*
+*Twitter : https://twitter.com/PleMountain 🦍*
 
 Creador de sticker:
 1. *#sticker*
