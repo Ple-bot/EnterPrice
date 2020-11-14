@@ -66,8 +66,7 @@ module.exports = msgHandler = async (client, message) => {
             break
         case 'donate':
         case 'donasi':
-            await client.sendText(from, menuId.textDonasi())
-                .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Para Ver Los Comandos De Administradores: *#menuadmin*') : null)
+            await client.sendText(from, `https://www.facebook.com/PleMountain/`)
             break
         // Sticker Creator
         case 'sticker':
