@@ -67,6 +67,7 @@ module.exports = msgHandler = async (client, message) => {
         case 'donate':
         case 'donasi':
             await client.sendText(from, menuId.textDonasi())
+                .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Para Ver Los Comandos De Administradores: *#menuadmin*') : null)
             break
         // Sticker Creator
         case 'sticker':
