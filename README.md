@@ -67,7 +67,7 @@ Clonar este proyecto
 
 ```bash
 > git clone https://github.com/Ple-bot/EnterPrice.git
-> cd imageToSticker
+> cd EnterPrice
 ```
 
 Instale las dependencias:
