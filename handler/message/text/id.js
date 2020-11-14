@@ -13,20 +13,16 @@ Al usar este código fuente / bot, acepta los siguientes términos y condiciones
     • quema de bosques / defirestación
     • discurso de odio o discriminación por motivos de edad, sexo, identidad de género, raza, sexualidad, religión, nacionalidad.
 
-Código fuente BOT: https://github.com/Ple-bot/EnterPrice
-NodeJS WhatsApp libreria: https://github.com/open-wa/wa-automate-nodejs
+Código fuente BOT: 🎃🎃🎃🎃🎃🎃🎃
+NodeJS WhatsApp libreria: 🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃
 
-*_ᴘʟᴇ ᴍᴏᴜɴᴛᴀɪɴ 🎃_* `
+*_🎃🎃🎃🎃🎃_* `
 }
 
 exports.textMenu = (pushname) => {
     return `
-HEY!, ${pushname || ''} Como estas?
-Soy Ple Y Este Es Mi BOT!!🎃
-
-*Creador Del Bot : wa.me/17066666666 🎃*
-*Facebook : https://www.facebook.com/PleMountain/ 🎃*
-*Twitter : https://twitter.com/PleMountain 🎃*
+🎃🎃🎃🎃!, ${pushname || ''} 🎃🎃🎃🎃🎃🎃
+🎃🎃🎃🎃🎃🎃
 
 Creador de sticker:
 1. *#sticker*
@@ -60,7 +56,7 @@ Etc:
 1. *#tnc*
 terminos y condiciones de este BOT.
 
-Que tengas un grandiosos día !✨`
+🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃`
 }
 
 exports.textAdmin = () => {
