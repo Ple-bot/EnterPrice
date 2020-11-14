@@ -66,7 +66,7 @@ Este proyecto requiere NodeJS v12.
 Clonar este proyecto
 
 ```bash
-> git clone https://github.com/YogaSakti/imageToSticker.git
+> git clone https://github.com/Ple-bot/EnterPrice.git
 > cd imageToSticker
 ```
 
