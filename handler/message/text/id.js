@@ -16,17 +16,17 @@ Al usar este código fuente / bot, acepta los siguientes términos y condiciones
 Código fuente BOT: https://github.com/Ple-bot/EnterPrice
 NodeJS WhatsApp libreria: https://github.com/open-wa/wa-automate-nodejs
 
-PleMountain`
+*_~𝕻𝖑𝖊 𝕸𝖔𝖚𝖓𝖙𝖆𝖎𝖓 🎃~_* `
 }
 
 exports.textMenu = (pushname) => {
     return `
 HEY!, ${pushname || ''} Como estas?
-Soy Ple Y Este Es Mi BOT!!🦍❄
+Soy Ple Y Este Es Mi BOT!!🎃
 
-*Creador Del Bot : wa.me/16677777779 🦍*
-*Facebook : https://www.facebook.com/PleMountain/ 🦍*
-*Twitter : https://twitter.com/PleMountain 🦍*
+*Creador Del Bot : wa.me/17066666666 🎃*
+*Facebook : https://www.facebook.com/PleMountain/ 🎃*
+*Twitter : https://twitter.com/PleMountain 🎃*
 
 Creador de sticker:
 1. *#sticker*
