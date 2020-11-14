@@ -66,14 +66,14 @@ module.exports = msgHandler = async (client, message) => {
             break
         case 'donate':
         case 'donasi':
-            await client.sendText(from, `https://www.facebook.com/PleMountain/`)
+            await client.sendText(from, `🎃🎃🎃🎃🎃🎃🎃`)
             break
         case 'donar':
-            await client.sendText(from, `https://www.facebook.com/PleMountain/`)
+            await client.sendText(from, `🎃🎃🎃🎃🎃🎃🎃🎃🎃🎃`)
             break
         case 'ple':
         case 'pla':
-            await client.sendText(from, `PLE EL MEJOR OK`)
+            await client.sendText(from, `PLE EL MEJOR OK 🎃`)
             break
         // Sticker Creator
         case 'sticker':
